@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | D'Signature Barbershop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from home.html */
+        /* Only showing unique styles for contact page */
+        
+        /* Map Container */
+        .map-container {
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 30px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* WhatsApp Section */
+        .whatsapp-section {
+            text-align: center;
+            padding: 40px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+        
+        .whatsapp-section h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .phone-link {
+            display: block;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .info-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p id="current-date"></p>
+        <div class="voice-controls">
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="twi">TW</button>
+            </div>
+            <button class="mute-btn"><i class="fas fa-volume-up"></i></button>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <div class="logo-image">D</div>
+                    <div>
+                        <div class="logo-text">D'Signature</div>
+                        <div class="slogan">Premium Barbershop</div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="home.html">Home</a>
+                    <a href="home.html#services">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="home.html#hours">Hours</a>
+                    <a href="contact.html" class="active">Contact</a>
+                    <a href="tel:+233553244223" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Contact Hero Section -->
+    <section class="hero" style="background-image: url('assets/contact-bg.jpg');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Contact <span class="neon-text">Us</span></h1>
+                <p>Book your appointment or visit our premium barbershop in Koforidua</p>
+                <div class="cta-buttons">
+                    <a href="#whatsapp" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="#map" class="btn btn-secondary">
+                        <i class="fas fa-map-marker-alt"></i> Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Section -->
+    <section id="whatsapp" class="section">
+        <div class="container">
+            <div class="whatsapp-section">
+                <h3>Chat With Us on WhatsApp</h3>
+                <p>Book appointments, ask questions, or get grooming advice</p>
+                <a href="https://wa.me/233553244223" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+                </a>
+                <p>Or call us directly:</p>
+                <a href="tel:+233553244223" class="phone-link">
+                    <i class="fas fa-phone"></i> +233 55 324 4223
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">Our <span class="neon-text">Location</span></h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                Visit us at KTU Junction, Mizpah Building, Opposite J & J School
+            </p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.883116828257!2d-0.261351724655802!3d5.594264933695707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9e6e1f6e7a0b%3A0x7d8b0d4e9e4e4e4e!2sKTU%20Junction!5e0!3m2!1sen!2sgh!4v1690000000000!5m2!1sen!2sgh" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Address</h3>
+                    <p>KTU Junction, Mizpah Building</p>
+                    <p>Opposite J & J School</p>
+                    <p>Koforidua, Ghana</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Working Hours</h3>
+                    <p>Mon-Wed: 9am - 6pm</p>
+                    <p>Thu-Fri: 9am - 8pm</p>
+                    <p>Sat: 8am - 7pm</p>
+                    <p>Sun: Closed</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Contact</h3>
+                    <p>Phone: +233 55 324 4223</p>
+                    <p>WhatsApp: +233 55 324 4223</p>
+                    <p>Email: dsignaturebarbershop@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">D'Signature</div>
+                    <p>Premium Barbershop</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/233553244223" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="home.html">Home</a>
+                        <a href="home.html#services">Services</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="home.html#hours">Hours</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <a href="home.html#services">Haircut & Styling</a>
+                        <a href="home.html#services">Beard Grooming</a>
+                        <a href="home.html#services">Hot Towel Shave</a>
+                        <a href="home.html#services">Royal Treatment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 D'Signature Barbershop. All rights reserved.</p>
+                <div class="visitor-counter">
+                    <i class="fas fa-users"></i>
+                    <span id="visitor-count">0</span> Visitors
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reuse scripts from home.html
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Update date/time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-GH', options);
+        }
+        setInterval(updateDateTime, 60000);
+        updateDateTime();
+
+        // Visitor counter
+        let count = localStorage.getItem('visitorCount') || 0;
+        count++;
+        localStorage.setItem('visitorCount', count);
+        document.getElementById('visitor-count').textContent = count;
+
+        // Voice greeting system
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const muteBtn = document.querySelector('.mute-btn');
+        const audioEn = document.getElementById('welcome-en');
+        const audioTwi = document.getElementById('welcome-twi');
+        let isMuted = false;
+
+        // Language toggle
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                if (!isMuted) {
+                    if (btn.dataset.lang === 'en') {
+                        audioEn.currentTime = 0;
+                        audioEn.play();
+                    } else {
+                        audioTwi.currentTime = 0;
+                        audioTwi.play();
+                    }
+                }
+            });
+        });
+
+        // Mute toggle
+        muteBtn.addEventListener('click', () => {
+            isMuted = !isMuted;
+            if (isMuted) {
+                audioEn.pause();
+                audioTwi.pause();
+                muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                const activeLang = document.querySelector('.lang-btn.active').dataset.lang;
+                if (activeLang === 'en') audioEn.play();
+                else audioTwi.play();
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Make navbar more visible when scrolled
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(5, 5, 5, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.background = 'rgba(17, 17, 17, 0.9)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+    </script>
+</body>
+  </html>
