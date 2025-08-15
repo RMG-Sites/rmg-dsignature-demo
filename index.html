@@ -1,1 +1,115 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Signature Barbershop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #000 url('assets/barber-bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            background: url('assets/barber-logo.png') no-repeat center center/contain;
+            margin: 0 auto 20px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #D4AF37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .enter-btn {
+            display: inline-block;
+            background: #D4AF37;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 15px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #D4AF37;
+        }
+        
+        .enter-btn:hover {
+            background: transparent;
+            color: #D4AF37;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .address {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+        
+        .address strong {
+            color: #D4AF37;
+            display: block;
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <h1>D'Signature Barbershop</h1>
+        <h2>Premium Grooming Experience in Koforidua</h2>
+        <a href="home.html" class="enter-btn">Enter Salon</a>
+        
+        <div class="address">
+            KTU Junction, Mizpah Building<br>
+            <strong>Opposite J & J School</strong>
+        </div>
+    </div>
+</body>
+</html>
