@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | D'Signature Salon (Hair & Beauty)</title>
+    <title>D'Signature Barbershop | Premium Haircuts & Shaves</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* ===== GLOBAL STYLES ===== */
         :root {
             --primary: #000000;
-            --secondary: #D4AF37; /* Gold */
+            --secondary: #D4AF37;
             --accent: #ffffff;
             --dark-bg: #111111;
             --darker-bg: #050505;
@@ -22,7 +22,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
@@ -30,6 +30,19 @@
             color: var(--accent);
             background: var(--dark-bg);
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMDUpIi8+PHJlY3QgeD0iMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+            opacity: 0.15;
+            z-index: -1;
         }
         
         .container {
@@ -49,6 +62,8 @@
             margin-bottom: 50px;
             color: var(--secondary);
             text-shadow: var(--neon-glow);
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 1px;
         }
         
         .btn {
@@ -155,6 +170,7 @@
             padding: 15px 0;
             transition: var(--transition);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
         
         nav {
@@ -163,34 +179,42 @@
             align-items: center;
         }
         
-        .logo-container {
+        .client-banner {
             display: flex;
             align-items: center;
-            gap: 15px;
+            height: 60px;
+            text-decoration: none;
         }
         
-        .logo-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--secondary);
+        .banner-content {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.5rem;
+            flex-direction: column;
+            margin-left: 15px;
         }
         
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
+        .banner-title {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--secondary);
+            letter-spacing: 1px;
+            line-height: 1;
+            text-shadow: var(--neon-glow);
         }
         
-        .slogan {
+        .banner-subtitle {
+            font-size: 1.1rem;
+            color: #ddd;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+        
+        .banner-tagline {
             font-size: 0.9rem;
-            color: var(--accent);
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 3px;
+            letter-spacing: 1px;
         }
         
         .nav-links {
@@ -205,6 +229,7 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+            font-size: 1.1rem;
         }
         
         .nav-links a.active {
@@ -241,21 +266,10 @@
         
         /* ===== HERO SECTION ===== */
         .hero {
-            padding: 180px 0 80px;
+            padding: 180px 0 100px;
             position: relative;
             overflow: hidden;
-            background: url('https://images.unsplash.com/photo-1562788866-7aa033359875?ixlib=rb-4.0.3') no-repeat center center/cover;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: -1;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTTAgMEgxMDBWMTAwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
         }
         
         .hero-content {
@@ -268,6 +282,8 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 1px;
         }
         
         .hero p {
@@ -287,108 +303,123 @@
             margin-top: 30px;
         }
         
-        /* ===== CONTACT PAGE SPECIFIC STYLES ===== */
-        .whatsapp-section {
-            text-align: center;
-            padding: 40px;
-            background: rgba(30, 30, 30, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 15px;
-            margin: 40px auto;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .whatsapp-section h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            text-shadow: var(--neon-glow);
-        }
-        
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
-        
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-        
-        .phone-link {
-            display: block;
-            font-size: 1.5rem;
-            margin: 20px 0;
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .map-container {
-            height: 450px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-top: 30px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .contact-info {
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
         
-        .info-card {
+        .service-card {
             background: rgba(30, 30, 30, 0.8);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 15px;
             padding: 30px;
             text-align: center;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
         
-        .info-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .info-card i {
-            font-size: 2.5rem;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
             color: var(--secondary);
             margin-bottom: 20px;
-            text-shadow: var(--neon-glow);
         }
         
-        .info-card h3 {
+        .service-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--secondary);
-            font-size: 1.5rem;
         }
         
-        .info-card p {
-            color: #ddd;
-            margin: 8px 0;
+        .service-card .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: var(--secondary);
+        }
+        
+        /* ===== LOCATION SECTION ===== */
+        .location-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .location-text {
+            text-align: center;
+        }
+        
+        .location-text h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .location-text p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .location-text i {
+            color: var(--secondary);
+        }
+        
+        .location-hint {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-style: italic;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .location-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--secondary);
+        }
+        
+        .location-image img {
+            width: 100%;
+            display: block;
         }
         
         /* ===== FOOTER ===== */
@@ -409,11 +440,6 @@
         
         .footer-brand {
             text-align: center;
-        }
-        
-        .logo-text {
-            font-size: 2rem;
-            margin-bottom: 10px;
         }
         
         .social-links {
@@ -539,6 +565,14 @@
                 gap: 10px;
                 padding: 15px 0;
             }
+            
+            .banner-title {
+                font-size: 1.8rem;
+            }
+            
+            .banner-subtitle {
+                font-size: 1rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -554,8 +588,12 @@
                 width: 100%;
             }
             
-            .map-container {
-                height: 300px;
+            .banner-title {
+                font-size: 1.5rem;
+            }
+            
+            .location-container {
+                padding: 20px;
             }
         }
     </style>
@@ -563,7 +601,7 @@
 <body>
     <!-- Top Banner -->
     <div class="top-banner">
-        <p id="current-date">Thursday, August 14, 2025</p>
+        <p id="current-date">Friday, 15 August 2025</p>
         <div class="voice-controls">
             <div class="lang-toggle">
                 <button class="lang-btn active" data-lang="en">EN</button>
@@ -577,19 +615,20 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo-container">
-                    <div class="logo-image">D</div>
-                    <div>
-                        <div class="logo-text">D'Signature Salon</div>
-                        <div class="slogan">Hair & Beauty Salon</div>
+                <a href="#" class="client-banner">
+                    <div class="banner-title">D'Signature</div>
+                    <div class="banner-content">
+                        <div class="banner-subtitle">BARBERSHOP</div>
+                        <div class="banner-tagline">Haircuts & Shaves</div>
                     </div>
-                </div>
+                </a>
+                
                 <div class="nav-links">
-                    <a href="home.html">Home</a>
-                    <a href="home.html#services">Services</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="home.html#hours">Hours</a>
-                    <a href="contact.html" class="active">Contact</a>
+                    <a href="#" class="active">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#hours">Hours</a>
+                    <a href="#contact">Contact</a>
                     <a href="tel:+233553244223" class="btn btn-primary">
                         <i class="fas fa-phone"></i> Call Now
                     </a>
@@ -599,83 +638,109 @@
         </div>
     </header>
 
-    <!-- Contact Hero Section -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Contact <span class="neon-text">Us</span></h1>
-                <p>Book your appointment or visit our premium salon in Koforidua</p>
+                <h1>Experience Premium <span class="neon-text">Grooming</span></h1>
+                <p class="banner-tagline">Welcome to Dopeness</p>
+                <p>Koforidua's finest barbershop offering precision cuts, beard grooming, and relaxing hot towel shaves in a premium atmosphere.</p>
                 <div class="cta-buttons">
-                    <a href="#whatsapp" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    <a href="tel:+233553244223" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Book Appointment
                     </a>
-                    <a href="#map" class="btn btn-secondary">
-                        <i class="fas fa-map-marker-alt"></i> Location
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-scissors"></i> View Services
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WhatsApp Section -->
-    <section id="whatsapp" class="section">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <div class="container">
-            <div class="whatsapp-section">
-                <h3>Chat With Us on WhatsApp</h3>
-                <p>Book appointments, ask questions, or get grooming advice</p>
-                <a href="https://wa.me/233553244223" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
-                </a>
-                <p>Or call us directly:</p>
-                <a href="tel:+233553244223" class="phone-link">
-                    <i class="fas fa-phone"></i> +233 55 324 4223
-                </a>
+            <h2 class="section-title">Our <span class="neon-text">Services</span></h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Haircut & Styling</h3>
+                    <p>Professional haircut with precision styling using top products</p>
+                    <div class="price">GH¢ 25</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Beard Grooming</h3>
+                    <p>Beard trim, shape, and conditioning with hot towels</p>
+                    <div class="price">GH¢ 20</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Royal Treatment</h3>
+                    <p>Haircut, beard grooming, facial massage, and hot towel</p>
+                    <div class="price">GH¢ 45</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section id="map" class="section" style="background: var(--darker-bg);">
+    <!-- Location Section -->
+    <section id="contact" class="section" style="background: var(--darker-bg);">
         <div class="container">
             <h2 class="section-title">Our <span class="neon-text">Location</span></h2>
-            <p style="text-align: center; margin-bottom: 30px;">
-                Visit us at KTU Junction, Mizpah Building, Opposite J & J School
-            </p>
             
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.883116828257!2d-0.261351724655802!3d5.594264933695707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9e6e1f6e7a0b%3A0x7d8b0d4e9e4e4e4e!2sD%27Signature%20Haircuts%20%26%20Shaves!5e0!3m2!1sen!2sgh!4v1690000000000!5m2!1sen!2sgh" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="location-container">
+                <div class="location-text">
+                    <h3>Find Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> KTU Junction, Mizpah Building</p>
+                    <p>Opposite J & J School, Koforidua</p>
+                    <div class="location-hint">
+                        <i class="fas fa-lightbulb"></i> Look for our gold "D'Signature" signage!
+                    </div>
+                </div>
+                
+                <div class="location-image">
+                    <div style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzIyMiIvPjx0ZXh0IHg9IjQwMCIgeT0iMjAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNENEFGMzciPkRTaWduYXR1cmUgQmFyYmVyc2hvcCBMb2NhdGlvbjwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjI0MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZGRkIj5LVEUgSnVuY3Rpb24sIE1penBhaCBCdWlsZGluZzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjI3MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZGRkIj5PcHBvc2l0ZSBKICYgSiBTY2hvb2w8L3RleHQ+PC9zdmc+') center/cover; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <div style="background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px; text-align: center;">
+                            <h3 style="color: #D4AF37; margin-bottom: 10px;">Our Location</h3>
+                            <p style="color: #fff;">KTU Junction, Mizpah Building</p>
+                            <p style="color: #fff;">Opposite J & J School</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Info -->
-    <section class="section">
+    <!-- Hours Section -->
+    <section id="hours" class="section">
         <div class="container">
-            <div class="contact-info">
-                <div class="info-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Address</h3>
-                    <p>KTU Junction, Mizpah Building</p>
-                    <p>Opposite J & J School</p>
-                    <p>Koforidua, Ghana</p>
+            <h2 class="section-title">Working <span class="neon-text">Hours</span></h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Monday - Saturday</h3>
+                    <p>7:30 AM - 9:00 PM</p>
                 </div>
                 
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Working Hours</h3>
-                    <p>Monday-Saturday: 7:30am - 9:00pm</p>
-                    <p>Sunday: Closed</p>
+                <div class="service-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Sunday</h3>
+                    <p>Closed</p>
                 </div>
                 
-                <div class="info-card">
+                <div class="service-card">
                     <i class="fas fa-phone"></i>
-                    <h3>Contact</h3>
-                    <p>Phone: +233 55 324 4223</p>
-                    <p>WhatsApp: +233 55 324 4223</p>
-                    <p>Email: dsignaturebarbershop@gmail.com</p>
+                    <h3>Contact Us</h3>
+                    <p>+233 55 324 4223</p>
+                    <p>dsignaturebarbershop@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -686,41 +751,41 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo-text">D'Signature Salon</div>
-                    <p>Hair & Beauty Salon</p>
+                    <h3 style="color: var(--secondary); margin-bottom: 15px;">D'Signature Barbershop</h3>
+                    <p>Haircuts & Shaves</p>
+                    <p class="banner-tagline">Welcome to Dopeness</p>
                     <div class="social-links">
-                        <a href="https://facebook.com/profile.php?id=100063798325026" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/233553244223" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div>
                     <h3>Quick Links</h3>
                     <div class="footer-links">
-                        <a href="home.html">Home</a>
-                        <a href="home.html#services">Services</a>
-                        <a href="gallery.html">Gallery</a>
-                        <a href="home.html#hours">Hours</a>
-                        <a href="contact.html">Contact</a>
+                        <a href="#">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#hours">Hours</a>
+                        <a href="#contact">Contact</a>
                     </div>
                 </div>
                 <div>
                     <h3>Services</h3>
                     <div class="footer-links">
-                        <a href="home.html#services">Haircut & Styling</a>
-                        <a href="home.html#services">Beard Grooming</a>
-                        <a href="home.html#services">Hot Towel Shave</a>
-                        <a href="home.html#services">Royal Treatment</a>
-                        <a href="home.html#services">Kids Cut</a>
+                        <a href="#">Haircut & Styling</a>
+                        <a href="#">Beard Grooming</a>
+                        <a href="#">Hot Towel Shave</a>
+                        <a href="#">Royal Treatment</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 D'Signature Salon (Hair & Beauty). All rights reserved.</p>
+                <p>&copy; 2025 D'Signature Barbershop. All rights reserved.</p>
                 <div class="visitor-counter">
                     <i class="fas fa-users"></i>
-                    <span id="visitor-count">0</span> Visitors
+                    <span id="visitor-count">124</span> Visitors
                 </div>
                 <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">
                     Powered by Ritemasta Publications (RMG)
@@ -728,10 +793,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Audio Elements -->
-    <audio id="welcome-en" src="assets/welcome_en.mp3"></audio>
-    <audio id="welcome-twi" src="assets/welcome_twi.mp3"></audio>
 
     <script>
         // Mobile Menu Toggle
@@ -764,46 +825,6 @@
         count++;
         localStorage.setItem('visitorCount', count);
         document.getElementById('visitor-count').textContent = count;
-
-        // Voice greeting system
-        const langBtns = document.querySelectorAll('.lang-btn');
-        const muteBtn = document.querySelector('.mute-btn');
-        const audioEn = document.getElementById('welcome-en');
-        const audioTwi = document.getElementById('welcome-twi');
-        let isMuted = false;
-
-        // Language toggle
-        langBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                langBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                if (!isMuted) {
-                    if (btn.dataset.lang === 'en') {
-                        audioEn.currentTime = 0;
-                        audioEn.play();
-                    } else {
-                        audioTwi.currentTime = 0;
-                        audioTwi.play();
-                    }
-                }
-            });
-        });
-
-        // Mute toggle
-        muteBtn.addEventListener('click', () => {
-            isMuted = !isMuted;
-            if (isMuted) {
-                audioEn.pause();
-                audioTwi.pause();
-                muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            } else {
-                muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                const activeLang = document.querySelector('.lang-btn.active').dataset.lang;
-                if (activeLang === 'en') audioEn.play();
-                else audioTwi.play();
-            }
-        });
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
