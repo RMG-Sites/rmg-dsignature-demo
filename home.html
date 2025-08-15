@@ -1,1 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Signature Salon (Hair & Beauty) | Koforidua</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== BASE STYLES ===== */
+        :root {
+            --primary: #000000;
+            --secondary: #D4AF37;
+            --accent: #ffffff;
+            --dark-bg: #111111;
+            --darker-bg: #050505;
+            --card-bg: rgba(212, 175, 55, 0.1);
+            --neon-glow: 0 0 10px #D4AF37, 0 0 20px rgba(212, 175, 55, 0.5);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--accent);
+            background: var(--dark-bg);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--secondary);
+            text-shadow: var(--neon-glow);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 5px;
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #b5942d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .neon-text {
+            color: var(--secondary);
+            text-shadow: var(--neon-glow);
+        }
+        
+        /* ===== TOP BANNER ===== */
+        .top-banner {
+            background: var(--darker-bg);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .top-banner p {
+            color: var(--secondary);
+        }
+        
+        /* Voice Controls */
+        .voice-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lang-toggle {
+            display: flex;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid var(--secondary);
+        }
+        
+        .lang-btn {
+            padding: 4px 12px;
+            background: transparent;
+            color: var(--accent);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .lang-btn.active {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .mute-btn {
+            background: transparent;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .slogan {
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:not(.btn):hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:not(.btn):after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:not(.btn):hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 180px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: url('assets/barber-hero.jpg') no-repeat center center/cover;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .service-card .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: var(--secondary);
+        }
+        
+        /* ===== GALLERY PREVIEW ===== */
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* ===== HOURS & INFO SECTION ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .hours-card, .contact-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .hours-card h3, .contact-card h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-list .day {
+            font-weight: 500;
+        }
+        
+        .hours-list .time {
+            color: var(--secondary);
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary);
+            width: 25px;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--darker-bg);
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .footer-brand {
+            text-align: center;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .visitor-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* ===== DYNAMIC BANNER ===== */
+        .banner-carousel {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner-track {
+            display: flex;
+            height: 100%;
+            animation: slide 30s infinite linear;
+        }
+        
+        .banner-track img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            45% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            70% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            95% { transform: translateX(-300%); }
+            100% { transform: translateX(-400%); }
+        }
+        
+        /* ===== MOBILE RESPONSIVENESS ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .banner-carousel {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--darker-bg);
+                width: 70%;
+                height: calc(100vh - 80px);
+                padding: 30px;
+                transition: var(--transition);
+                gap: 20px;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding-top: 150px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .banner-carousel {
+                height: 250px;
+            }
+            
+            .top-banner {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .banner-carousel {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p id="current-date"></p>
+        <div class="voice-controls">
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="twi">TW</button>
+            </div>
+            <button class="mute-btn"><i class="fas fa-volume-up"></i></button>
+        </div>
+    </div>
+    
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/barber-banner1.jpg" alt="Barbershop Interior">
+            <img src="assets/barber-banner2.jpg" alt="Haircut Service">
+            <img src="assets/barber-banner3.jpg" alt="Beard Grooming">
+            <img src="assets/barber-banner4.jpg" alt="Client Service">
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <div class="logo-image">D</div>
+                    <div>
+                        <div class="logo-text">D'Signature Salon</div>
+                        <div class="slogan">Hair & Beauty Salon</div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="home.html" class="active">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#hours">Hours</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="tel:+233553244223" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Experience Premium <span class="neon-text">Grooming</span></h1>
+                <p>Welcome to Dopeness - Koforidua's finest salon offering precision cuts, beard grooming, and relaxing hot towel shaves in a premium atmosphere.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+233553244223" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Book Appointment
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-scissors"></i> View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our <span class="neon-text">Services</span></h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Haircut & Styling</h3>
+                    <p>Professional haircut with precision styling using top products</p>
+                    <div class="price">GH¢ 25</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Beard Grooming</h3>
+                    <p>Beard trim, shape, and conditioning with hot towels</p>
+                    <div class="price">GH¢ 20</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Royal Treatment</h3>
+                    <p>Haircut, beard grooming, facial massage, and hot towel</p>
+                    <div class="price">GH¢ 45</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Kids Cut</h3>
+                    <p>Specialized haircuts for young gentlemen</p>
+                    <div class="price">GH¢ 20</div>
+                    <a href="tel:+233553244223" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section id="gallery" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">Our <span class="neon-text">Work</span></h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Browse some of our recent transformations and styles
+            </p>
+            
+            <div class="gallery-preview">
+                <div class="gallery-item">
+                    <img src="assets/gallery1.jpg" alt="Fade Haircut">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery2.jpg" alt="Beard Styling">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery3.jpg" alt="Hair Design">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery4.jpg" alt="Full Service">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery5.jpg" alt="Modern Cut">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery6.jpg" alt="Beard Trim">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery7.jpg" alt="Kids Cut">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery8.jpg" alt="Hair Treatment">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="gallery.html" class="btn btn-primary">
+                    <i class="fas fa-images"></i> View Full Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Info Section -->
+    <section id="hours" class="section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="hours-card">
+                    <h3>Working Hours</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday</span> <span class="time">7:30 AM - 9:00 PM</span></li>
+                        <li><span class="day">Tuesday</span> <span class="time">7:30 AM - 9:00 PM</span></li>
+                        <li><span class="day">Wednesday</span> <span class="time">7:30 AM - 9:00 PM</span></li>
+                        <li><span class="day">Thursday</span> <span class="time">7:30 AM - 9:00 PM</span></li>
+                        <li><span class="day">Friday</span> <span class="time">7:30 AM - 9:00 PM</span></li>
+                        <li><span class="day">Saturday</span> <span class="time">7:30 AM - 9:00 PM</span></li>
+                        <li><span class="day">Sunday</span> <span class="time">Closed</span></li>
+                    </ul>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> KTU Junction, Mizpah Building, Opp. J & J School</p>
+                        <p><i class="fas fa-phone"></i> +233 55 324 4223</p>
+                        <p><i class="fab fa-whatsapp"></i> +233 55 324 4223</p>
+                        <p><i class="fas fa-envelope"></i> dsignaturebarbershop@gmail.com</p>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">D'Signature Salon</div>
+                    <p>Hair & Beauty Salon</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/profile.php?id=100063798325026" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/233553244223" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="home.html">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#hours">Hours</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <a href="#services">Haircut & Styling</a>
+                        <a href="#services">Beard Grooming</a>
+                        <a href="#services">Hot Towel Shave</a>
+                        <a href="#services">Royal Treatment</a>
+                        <a href="#services">Kids Cut</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 D'Signature Salon (Hair & Beauty). All rights reserved.</p>
+                <div class="visitor-counter">
+                    <i class="fas fa-users"></i>
+                    <span id="visitor-count">0</span> Visitors
+                </div>
+                <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">
+                    Powered by Ritemasta Publications (RMG)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="welcome-en" src="assets/welcome_en.mp3"></audio>
+    <audio id="welcome-twi" src="assets/welcome_twi.mp3"></audio>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Update date/time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-GH', options);
+        }
+        setInterval(updateDateTime, 60000);
+        updateDateTime();
+
+        // Visitor counter
+        let count = localStorage.getItem('visitorCount') || 0;
+        count++;
+        localStorage.setItem('visitorCount', count);
+        document.getElementById('visitor-count').textContent = count;
+
+        // Voice greeting system
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const muteBtn = document.querySelector('.mute-btn');
+        const audioEn = document.getElementById('welcome-en');
+        const audioTwi = document.getElementById('welcome-twi');
+        let isMuted = false;
+        let hasPlayed = false;
+
+        // Play greeting on page load (once per session)
+        window.addEventListener('load', () => {
+            if (!hasPlayed) {
+                setTimeout(() => {
+                    if (!isMuted) audioEn.play();
+                    hasPlayed = true;
+                }, 1000);
+            }
+        });
+
+        // Language toggle
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                if (!isMuted) {
+                    if (btn.dataset.lang === 'en') {
+                        audioEn.currentTime = 0;
+                        audioEn.play();
+                    } else {
+                        audioTwi.currentTime = 0;
+                        audioTwi.play();
+                    }
+                }
+            });
+        });
+
+        // Mute toggle
+        muteBtn.addEventListener('click', () => {
+            isMuted = !isMuted;
+            if (isMuted) {
+                audioEn.pause();
+                audioTwi.pause();
+                muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                const activeLang = document.querySelector('.lang-btn.active').dataset.lang;
+                if (activeLang === 'en') audioEn.play();
+                else audioTwi.play();
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Make navbar more visible when scrolled
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(5, 5, 5, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.background = 'rgba(17, 17, 17, 0.9)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
